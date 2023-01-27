@@ -1,0 +1,10 @@
+name: CI Workflow
+on: push
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Lint code
+        run: npm run lint
+      - name: Test code
+        run: echo Test
