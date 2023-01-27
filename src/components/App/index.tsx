@@ -1,9 +1,17 @@
-import React from 'react';
+import React, { useState } from 'react';
+import * as Sentry from '@sentry/react';
 
-const App = () => {
-  <div>
-    <p>App works!</p>
-  </div>;
-};
+function App() {
+  const [value, setValue] = useState('App works!');
 
-export default App;
+  return (
+    <div>
+      <p>{value}</p>
+      <button type="button" onClick={() => setValue('App changed!')}>
+        Change title
+      </button>
+    </div>
+  );
+}
+
+export default Sentry.withProfiler(App);
