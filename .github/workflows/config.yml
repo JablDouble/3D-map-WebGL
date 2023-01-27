@@ -1,10 +1,20 @@
-name: CI Workflow
-on: push
+name: CI push master Workflow
+
+on:
+  push:
+    branches:
+      - master
+
 jobs:
   lint:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version: [12.x]
     steps:
-      - name: Lint code
-        run: npm run lint
-      - name: Test code
-        run: echo Test
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - run: npm ci
+      - run: npm run lint
