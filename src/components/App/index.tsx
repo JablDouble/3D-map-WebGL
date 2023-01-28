@@ -1,16 +1,14 @@
-import React, { useState } from 'react';
+import React from 'react';
 import * as Sentry from '@sentry/react';
+import { Routes, Route } from 'react-router-dom';
 
 function App() {
-  const [value, setValue] = useState('App works!');
-
   return (
-    <div>
-      <p>{value}</p>
-      <button type="button" onClick={() => setValue('App changed!')}>
-        Change title test
-      </button>
-    </div>
+    <Routes>
+      <Route path="/" element={<div>Main</div>} />
+      <Route path="/sign-in" element={<div>Login</div>} />
+      <Route path="*" element={<div>Error!</div>} />
+    </Routes>
   );
 }
 

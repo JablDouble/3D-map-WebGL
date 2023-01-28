@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
+import { BrowserRouter } from 'react-router-dom';
 import App from './components/App';
 import GlobalErrorBoundary from './shared/lib/errorBoundaries/GlobalErrorBoundary';
 
@@ -22,7 +23,9 @@ const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <GlobalErrorBoundary>
-      <App />
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
     </GlobalErrorBoundary>
   </React.StrictMode>,
 );
