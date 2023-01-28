@@ -1,10 +1,13 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
-import App from './components/App';
+
+import App from './app/App';
 import GlobalErrorBoundary from './shared/lib/errorBoundaries/GlobalErrorBoundary';
+import { setupStore } from './store';
 
 process.env.NODE_ENV === 'production' &&
   Sentry.init({
@@ -19,12 +22,16 @@ process.env.NODE_ENV === 'production' &&
 
 const rootElement = document.getElementById('root') as HTMLElement;
 
+const store = setupStore();
+
 const root = ReactDOM.createRoot(rootElement);
 root.render(
   <React.StrictMode>
     <GlobalErrorBoundary>
       <BrowserRouter>
-        <App />
+        <Provider store={store}>
+          <App />
+        </Provider>
       </BrowserRouter>
     </GlobalErrorBoundary>
   </React.StrictMode>,
