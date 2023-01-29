@@ -5,8 +5,8 @@ import ReactDOM from 'react-dom/client';
 import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
-import App from './app/App';
-import GlobalErrorBoundary from './shared/lib/errorBoundaries/GlobalErrorBoundary';
+import { App } from './app';
+import { GlobalErrorBoundary } from './shared';
 import { setupStore } from './store';
 
 process.env.NODE_ENV === 'production' &&

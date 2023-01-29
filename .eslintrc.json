@@ -4,7 +4,7 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["airbnb", "airbnb/hooks"],
+  "extends": ["airbnb", "airbnb/hooks", "@feature-sliced"],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -26,6 +26,19 @@
     "implicit-arrow-linebreak": "off",
     "arrow-body-style": "off",
     "import/prefer-default-export": "off",
+    "import/no-internal-modules": [
+      "error",
+      {
+        "allow": [
+          "**/node_modules/**",
+          "**/lib/**",
+          "**/model/**",
+          "**/ui/**",
+          "**/api/**",
+          "**/config/**"
+        ]
+      }
+    ],
     "no-param-reassign": [
       "error",
       {
