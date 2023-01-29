@@ -1,6 +1,6 @@
-import React from 'react';
 import * as Sentry from '@sentry/react';
-import { Routes, Route } from 'react-router-dom';
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
 
 function App() {
   return (
