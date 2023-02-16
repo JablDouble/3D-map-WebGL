@@ -6,7 +6,8 @@ interface ButtonProps {
   variant?: 'text' | 'contained' | 'outlined';
   size?: 'small' | 'medium' | 'large';
   endIcon?: ReactElement;
-  color?: 'primary' | 'secondary';
+  color?: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
+  disabled?: boolean;
 }
 
 const Button: FC<ButtonProps> = ({
@@ -15,8 +16,16 @@ const Button: FC<ButtonProps> = ({
   size = 'medium',
   color = 'primary',
   endIcon,
+  disabled = false,
 }: ButtonProps): ReactElement => (
-  <MUIButton variant={variant} size={size} color={color} disableElevation endIcon={endIcon}>
+  <MUIButton
+    variant={variant}
+    size={size}
+    color={color}
+    disableElevation
+    disabled={disabled}
+    endIcon={endIcon}
+  >
     {children}
   </MUIButton>
 );

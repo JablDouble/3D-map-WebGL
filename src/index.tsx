@@ -10,7 +10,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './app';
-import { GlobalErrorBoundary } from './shared';
+import { GlobalErrorBoundary } from './shared/public-api';
 import { setupStore } from './store';
 
 process.env.NODE_ENV === 'production' &&
