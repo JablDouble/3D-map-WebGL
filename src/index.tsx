@@ -1,3 +1,7 @@
+import '@fontsource/roboto/300.css';
+import '@fontsource/roboto/400.css';
+import '@fontsource/roboto/500.css';
+import '@fontsource/roboto/700.css';
 import * as Sentry from '@sentry/react';
 import { BrowserTracing } from '@sentry/tracing';
 import React from 'react';
@@ -6,7 +10,7 @@ import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 
 import { App } from './app';
-import { GlobalErrorBoundary } from './shared';
+import { GlobalErrorBoundary } from './shared/public-api';
 import { setupStore } from './store';
 
 process.env.NODE_ENV === 'production' &&

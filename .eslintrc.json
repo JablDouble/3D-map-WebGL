@@ -25,7 +25,10 @@
     "no-unused-vars": "off",
     "implicit-arrow-linebreak": "off",
     "arrow-body-style": "off",
+    "object-curly-newline": "off",
     "import/prefer-default-export": "off",
+    "react/require-default-props": "off",
+    "import/no-extraneous-dependencies": "off",
     "import/no-internal-modules": [
       "error",
       {
@@ -35,7 +38,10 @@
           "**/model/**",
           "**/ui/**",
           "**/api/**",
-          "**/config/**"
+          "**/config/**",
+          "**/public-api.ts",
+          "**/*.png",
+          "**/*.scss"
         ]
       }
     ],
