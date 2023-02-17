@@ -40,6 +40,7 @@
           "**/api/**",
           "**/config/**",
           "**/public-api.ts",
+          "**/*.png",
           "**/*.scss"
         ]
       }
