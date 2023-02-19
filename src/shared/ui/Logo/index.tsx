@@ -39,7 +39,13 @@ const Logo: FC<LogoProps> = ({ hasName = true, logoSize = 'small' }: LogoProps) 
 
   return (
     <Box className={style.logoContainer}>
-      <Image src={LogoImg} alt="Anywhere App Logo" width={width} height={height} />
+      <Image
+        src={LogoImg}
+        alt="Anywhere App Logo"
+        width={width}
+        height={height}
+        className={style.logoImage}
+      />
       {hasName && (
         <Typography ml={1} variant="h6" align="center" component="div" color="textPrimary">
           Anywhere app

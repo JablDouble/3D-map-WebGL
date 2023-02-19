@@ -6,9 +6,10 @@ interface ImageProps {
   height: number | string;
   width: number | string;
   alt: string;
+  [x: string]: any;
 }
 
-const Image: FC<ImageProps> = ({ src, width, height, alt }: ImageProps) => (
+const Image: FC<ImageProps> = ({ src, width, height, alt, ...props }: ImageProps) => (
   <Box
     component="img"
     sx={{
@@ -17,6 +18,7 @@ const Image: FC<ImageProps> = ({ src, width, height, alt }: ImageProps) => (
     }}
     alt={alt}
     src={src}
+    {...props}
   />
 );
 

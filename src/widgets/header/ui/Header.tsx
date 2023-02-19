@@ -12,7 +12,7 @@ const HeaderContainer = styled(Box)(() => ({
 
 const Header: React.FC<HeaderProps> = () => {
   return (
-    <HeaderContainer px="5%" py={3}>
+    <HeaderContainer px="5%" py={2}>
       <Grid container>
         <Grid
           xs={12}
@@ -34,7 +34,7 @@ const Header: React.FC<HeaderProps> = () => {
             </NavLink>
           </Grid>
           <Grid xs={3} sm={4} item>
-            <NavLink to="/sign-in" textAlign="center">
+            <NavLink to="/sign-up" textAlign="center">
               Join
             </NavLink>
           </Grid>

@@ -19,6 +19,32 @@ const darkTheme = createTheme({
       default: '#282a37',
     },
   },
+
+  components: {
+    MuiTextField: {
+      styleOverrides: {
+        root: {
+          background: '#333645',
+        },
+      },
+    },
+    MuiInput: {
+      styleOverrides: {
+        underline: {
+          '&&:hover::before': {
+            borderColor: 'red',
+          },
+        },
+      },
+    },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          background: '#333645',
+        },
+      },
+    },
+  },
 });
 
 export default darkTheme;

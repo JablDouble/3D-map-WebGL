@@ -1,3 +1,4 @@
-import { Header } from './header';
+import { Header } from './Header';
+import { SignUpPanel } from './SignUpPanel';
 
-export { Header };
+export { Header, SignUpPanel };

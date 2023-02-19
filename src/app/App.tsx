@@ -1,24 +1,25 @@
-import { ThemeProvider } from '@mui/material';
-import { deepmerge } from '@mui/utils';
+import { CssBaseline } from '@mui/material';
 import * as Sentry from '@sentry/react';
 import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
-import { SignIn } from '../pages/public-api';
+import { SignUp } from '../pages/public-api';
 import { Header } from '../widgets/public-api';
+// eslint-disable-next-line import/no-internal-modules
+import withTheme from './providers/withTheme';
 import './styles/reset.scss';
-import { commonTheme, darkTheme } from './themes';
 
 function App() {
   return (
-    <ThemeProvider theme={deepmerge(commonTheme, darkTheme)}>
+    <>
+      <CssBaseline />
       <Header />
       <Routes>
-        <Route path="/sign-in" element={<SignIn />} />
+        <Route path="/sign-up" element={<SignUp />} />
         <Route path="*" element={<div>not found page!</div>} />
       </Routes>
-    </ThemeProvider>
+    </>
   );
 }
 
-export default Sentry.withProfiler(App);
+export default Sentry.withProfiler(withTheme(App));
