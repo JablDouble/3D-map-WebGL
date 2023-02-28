@@ -31,6 +31,7 @@ $api.interceptors.response.use(
         AppLocalStorageAPI.updateAccessToken(response.data.accessToken);
         return $api.request(originalRequest);
       } catch (e) {
+        // eslint-disable-next-line no-alert
         alert('not authorized');
       }
     }
