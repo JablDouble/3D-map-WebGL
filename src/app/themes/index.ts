@@ -1,4 +1,8 @@
+import { createTheme } from '@mui/material';
+
 import commonTheme from './commonTheme';
 import darkTheme from './darkTheme';
 
-export { darkTheme, commonTheme };
+const theme = createTheme(darkTheme, commonTheme);
+
+export { theme };

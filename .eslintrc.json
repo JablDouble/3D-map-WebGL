@@ -4,7 +4,13 @@
     "es2021": true,
     "jest": true
   },
-  "extends": ["airbnb", "airbnb/hooks", "@feature-sliced"],
+  "extends": [
+    "airbnb",
+    "airbnb/hooks",
+    "@feature-sliced",
+    "eslint:recommended",
+    "plugin:react/recommended"
+  ],
   "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
@@ -29,6 +35,8 @@
     "import/prefer-default-export": "off",
     "react/require-default-props": "off",
     "import/no-extraneous-dependencies": "off",
+    "react/jsx-props-no-spreading": "off",
+    "react/display-name": "off",
     "import/no-internal-modules": [
       "error",
       {
@@ -39,12 +47,17 @@
           "**/ui/**",
           "**/api/**",
           "**/config/**",
-          "**/public-api.ts",
+          "**/types/**",
+          "**/public-api.*",
           "**/*.png",
+          "**/*.jpg",
           "**/*.scss"
         ]
       }
     ],
+    "react/jsx-wrap-multilines": "off",
+    "react/jsx-one-expression-per-line": "off",
+    "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
     "no-param-reassign": [
       "error",
       {

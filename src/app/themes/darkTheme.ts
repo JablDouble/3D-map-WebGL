@@ -9,6 +9,9 @@ const darkTheme = createTheme({
     secondary: {
       main: '#767e8a',
     },
+    error: {
+      main: '#e1665d',
+    },
     text: {
       primary: '#fefefe',
       secondary: '#737987',
@@ -17,6 +20,25 @@ const darkTheme = createTheme({
     background: {
       paper: '#333645',
       default: '#282a37',
+    },
+  },
+
+  components: {
+    MuiInput: {
+      styleOverrides: {
+        underline: {
+          '&&:hover::before': {
+            borderColor: 'red',
+          },
+        },
+      },
+    },
+    MuiFilledInput: {
+      styleOverrides: {
+        root: {
+          background: '#333645',
+        },
+      },
     },
   },
 });

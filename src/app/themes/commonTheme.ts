@@ -1,11 +1,18 @@
-import { createTheme } from '@mui/material';
-
-const commonTheme = createTheme({
+const commonTheme = {
   palette: {
     contrastThreshold: 3,
     tonalOffset: 0.2,
   },
-  spacing: 8,
-});
+  spacing: (factor: number | undefined) => (factor ? `${16 * factor}px` : 16),
+  components: {
+    MuiIconButton: {
+      styleOverrides: {
+        root: {
+          padding: 0,
+        },
+      },
+    },
+  },
+};
 
 export default commonTheme;

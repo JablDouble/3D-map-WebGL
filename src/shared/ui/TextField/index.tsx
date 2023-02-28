@@ -1,4 +1,4 @@
-import { InputAdornment, TextField as MUITextField } from '@mui/material';
+import { InputAdornment, TextField as MUITextField, styled } from '@mui/material';
 import React, { FC, ReactElement, ReactNode } from 'react';
 
 interface TextFieldProps {
@@ -14,13 +14,29 @@ interface TextFieldProps {
   icon?: ReactNode | string;
   size?: 'small' | 'medium';
   fullWidth?: boolean;
+  value?: any;
+  [x: string]: any; // for the ...props
 }
+
+const CustomTextField = styled(MUITextField)(({ theme }) => ({
+  borderRadius: 15,
+  '.MuiFilledInput-root': {
+    borderRadius: 15,
+    '&:hover:not(.Mui-disabled, .Mui-error):before, &:after, &:before': {
+      borderBottom: 'none',
+    },
+    '&.Mui-focused': {
+      border: `2px solid ${theme.palette.primary.main}`,
+      boxShadow: `0 0 15px -7px ${theme.palette.primary.main}`,
+    },
+  },
+}));
 
 const TextField: FC<TextFieldProps> = ({
   id,
   label,
   defaultValue,
-  variant = 'outlined',
+  variant = 'filled',
   required,
   type = 'text',
   helperText,
@@ -29,8 +45,10 @@ const TextField: FC<TextFieldProps> = ({
   icon,
   size = 'small',
   fullWidth = false,
+  value,
+  ...props
 }: TextFieldProps): ReactElement => (
-  <MUITextField
+  <CustomTextField
     id={id}
     label={label}
     variant={variant}
@@ -42,9 +60,12 @@ const TextField: FC<TextFieldProps> = ({
     error={error}
     size={size}
     fullWidth={fullWidth}
+    name={id}
+    value={value}
     InputProps={{
       endAdornment: <InputAdornment position="end">{icon}</InputAdornment>,
     }}
+    {...props}
   />
 );
 

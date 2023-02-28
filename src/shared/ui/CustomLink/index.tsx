@@ -1,14 +1,13 @@
-import { Typography, styled } from '@mui/material';
+import { styled } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 
 interface CustomLinkProps {
   to: string;
-  textAlign?: 'left' | 'center' | 'right';
   children: string | ReactNode;
 }
 
-const LinkText = styled(Typography)(({ theme }) => ({
+const LinkText = styled('span')(({ theme }) => ({
   color: theme.palette.primary.main,
   fontWeight: 500,
   '&:hover': {
@@ -16,16 +15,10 @@ const LinkText = styled(Typography)(({ theme }) => ({
   },
 }));
 
-const CustomLink: FC<CustomLinkProps> = ({ to, textAlign = 'left', children }) => {
+const CustomLink: FC<CustomLinkProps> = ({ to, children }) => {
   return (
     <RouterLink to={to}>
-      {typeof children === 'string' ? (
-        <LinkText variant="subtitle1" align={textAlign}>
-          {children}
-        </LinkText>
-      ) : (
-        children
-      )}
+      {typeof children === 'string' ? <LinkText>{children}</LinkText> : children}
     </RouterLink>
   );
 };
