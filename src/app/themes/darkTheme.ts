@@ -9,6 +9,9 @@ const darkTheme = createTheme({
     secondary: {
       main: '#767e8a',
     },
+    error: {
+      main: '#e1665d',
+    },
     text: {
       primary: '#fefefe',
       secondary: '#737987',
@@ -21,13 +24,6 @@ const darkTheme = createTheme({
   },
 
   components: {
-    MuiTextField: {
-      styleOverrides: {
-        root: {
-          background: '#333645',
-        },
-      },
-    },
     MuiInput: {
       styleOverrides: {
         underline: {

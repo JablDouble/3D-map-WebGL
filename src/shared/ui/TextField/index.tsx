@@ -14,6 +14,8 @@ interface TextFieldProps {
   icon?: ReactNode | string;
   size?: 'small' | 'medium';
   fullWidth?: boolean;
+  value?: any;
+  [x: string]: any; // for the ...props
 }
 
 const CustomTextField = styled(MUITextField)(({ theme }) => ({
@@ -43,6 +45,8 @@ const TextField: FC<TextFieldProps> = ({
   icon,
   size = 'small',
   fullWidth = false,
+  value,
+  ...props
 }: TextFieldProps): ReactElement => (
   <CustomTextField
     id={id}
@@ -56,9 +60,12 @@ const TextField: FC<TextFieldProps> = ({
     error={error}
     size={size}
     fullWidth={fullWidth}
+    name={id}
+    value={value}
     InputProps={{
       endAdornment: <InputAdornment position="end">{icon}</InputAdornment>,
     }}
+    {...props}
   />
 );
 

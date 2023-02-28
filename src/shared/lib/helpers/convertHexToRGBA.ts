@@ -1,4 +1,4 @@
-function convertHexToRGBA(hex: string, alpha?: number) {
+const convertHexToRGBA = (hex: string, alpha?: number) => {
   let modifedHex = hex.replace('#', '');
   if (modifedHex.length === 3) {
     modifedHex =
@@ -12,6 +12,6 @@ function convertHexToRGBA(hex: string, alpha?: number) {
     return `rgba(${r}, ${g}, ${b}, ${alpha})`;
   }
   return `rgb(${r}, ${g}, ${b})`;
-}
+};
 
 export default convertHexToRGBA;

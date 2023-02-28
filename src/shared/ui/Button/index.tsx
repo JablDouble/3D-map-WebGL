@@ -1,4 +1,4 @@
-import { Button as MUIButton, styled } from '@mui/material';
+import { CircularProgress, Button as MUIButton, styled } from '@mui/material';
 import React, { FC, ReactElement, ReactNode } from 'react';
 
 import { PaletteColor } from '../../public-api';
@@ -11,6 +11,9 @@ interface ButtonProps {
   color?: PaletteColor;
   disabled?: boolean;
   fullWidth?: boolean;
+  type?: 'button' | 'submit' | 'reset';
+  tabIndex?: number;
+  isLoading?: boolean;
 }
 
 interface CustomButtonProps {
@@ -32,15 +35,20 @@ const Button: FC<ButtonProps> = ({
   endIcon,
   disabled = false,
   fullWidth = true,
+  type,
+  tabIndex,
+  isLoading,
 }: ButtonProps): ReactElement => (
   <CustomButton
     variant={variant}
     size={size}
     color={color}
     disableElevation
-    disabled={disabled}
-    endIcon={endIcon}
+    disabled={disabled || isLoading}
+    endIcon={endIcon || (isLoading && <CircularProgress size={12} />)}
     fullWidth={fullWidth}
+    type={type}
+    tabIndex={tabIndex}
   >
     {children}
   </CustomButton>
