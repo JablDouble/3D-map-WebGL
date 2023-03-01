@@ -28,9 +28,9 @@ export const authSlice = createSlice({
       state.isAuth = false;
       state.user = action.payload.user;
     },
-    [signIn.fulfilled.type]: (state, action) => {
+    [signIn.fulfilled.type]: (state) => {
       state.isAuth = true;
-      state.user = action.payload.user;
+      state.user = null;
     },
   },
 });

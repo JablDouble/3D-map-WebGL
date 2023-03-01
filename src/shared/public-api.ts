@@ -1,5 +1,6 @@
 import AppLocalStorageAPI from './api/appLocalStorage';
 import AuthAPI from './api/auth';
+import googleOAuthURL from './config/googleOAuth';
 import GlobalErrorBoundary from './lib/errorBoundaries/GlobalErrorBoundary';
 import convertHexToRGBA from './lib/helpers/convertHexToRGBA';
 import createSafeAsyncThunk from './lib/helpers/createSafeAsyncThunk';
@@ -19,20 +20,12 @@ export * from './model';
 
 export * from './config/store';
 
-export {
-  GlobalErrorBoundary,
-  Button,
-  TextField,
-  Logo,
-  Image,
-  NavLink,
-  CustomLink,
-  PaletteColor,
-  GradientImageBox,
-};
+export { Button, TextField, Logo, Image, NavLink, CustomLink, PaletteColor, GradientImageBox };
 
-export { createSafeAsyncThunk, convertHexToRGBA };
+export { createSafeAsyncThunk, GlobalErrorBoundary, convertHexToRGBA };
 
 export { AuthAPI, AppLocalStorageAPI };
 
 export { useAppDispatch, useLoading, useError };
+
+export { googleOAuthURL };
