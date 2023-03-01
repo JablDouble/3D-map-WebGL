@@ -8,6 +8,7 @@ interface ButtonProps {
   variant?: 'text' | 'contained' | 'outlined';
   size?: 'small' | 'medium' | 'large';
   endIcon?: ReactElement;
+  startIcon?: ReactElement;
   color?: PaletteColor;
   disabled?: boolean;
   fullWidth?: boolean;
@@ -33,6 +34,7 @@ const Button: FC<ButtonProps> = ({
   size = 'medium',
   color = 'primary',
   endIcon,
+  startIcon,
   disabled = false,
   fullWidth = true,
   type,
@@ -46,6 +48,7 @@ const Button: FC<ButtonProps> = ({
     disableElevation
     disabled={disabled || isLoading}
     endIcon={endIcon || (isLoading && <CircularProgress size={12} />)}
+    startIcon={startIcon}
     fullWidth={fullWidth}
     type={type}
     tabIndex={tabIndex}

@@ -69,7 +69,7 @@ const SignInForm: FC<{}> = () => {
           </Typography>
         </Grid>
       </Grid>
-      <AuthActionButtons to="/sign-up" isLoading={isLoading} />
+      <AuthActionButtons type="signIn" to="/sign-up" isLoading={isLoading} />
     </form>
   );
 };
