@@ -7,7 +7,7 @@ import { BrowserTracing } from '@sentry/tracing';
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 
-import { App } from './app';
+import App from './app';
 
 process.env.NODE_ENV === 'production' &&
   Sentry.init({

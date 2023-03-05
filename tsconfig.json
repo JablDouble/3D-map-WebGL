@@ -5,7 +5,7 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "baseUrl": "."
+    "baseUrl": "src"
   },
   "include": ["src"]
 }

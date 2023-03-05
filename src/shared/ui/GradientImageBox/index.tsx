@@ -1,7 +1,7 @@
 import { Box, styled } from '@mui/material';
 import React, { FC, ReactNode } from 'react';
 
-import { convertHexToRGBA } from '../../public-api';
+import convertHexToRGBA from '../../lib/helpers/convertHexToRGBA';
 
 interface GradientImageBoxProps {
   children: ReactNode;

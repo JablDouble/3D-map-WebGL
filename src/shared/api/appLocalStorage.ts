@@ -6,7 +6,7 @@ export default class AppLocalStorageAPI {
   }
 
   static deleteAccessToken() {
-    localStorage.deleteItem(accessTokenName);
+    localStorage.removeItem(accessTokenName);
   }
 
   static updateAccessToken(value: string) {

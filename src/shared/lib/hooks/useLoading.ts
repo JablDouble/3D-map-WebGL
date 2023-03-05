@@ -1,4 +1,4 @@
-import { appActions, appSelectors } from '../../public-api';
+import { appActions, appSelectors } from '../../model';
 import useAppDispatch from './useAppDispatch';
 import useAppSelector from './useAppSelector';
 

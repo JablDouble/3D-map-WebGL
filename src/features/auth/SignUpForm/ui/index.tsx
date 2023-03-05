@@ -1,43 +1,70 @@
+import AccountBoxIcon from '@mui/icons-material/AccountBox';
 import EmailIcon from '@mui/icons-material/Email';
 import { Grid, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import React, { FC } from 'react';
 import { useNavigate } from 'react-router-dom';
 
-import {
-  AuthActionButtons,
-  AuthSignInDto,
-  PasswordTextField,
-} from '../../../../entities/public-api';
+import { AuthService, AuthSignUpDto, PasswordTextField } from '../../../../entities/public-api';
 import { TextField, useAppDispatch, useError, useLoading } from '../../../../shared/public-api';
+import AuthActionButtons from '../../AuthActionButtons';
 import validationSchema from '../lib/validation';
-import { signIn } from '../model';
 
-const SignInForm: FC<{}> = () => {
+const SignUpForm: FC<{}> = () => {
   const navigate = useNavigate();
   const dispatch = useAppDispatch();
   const [isLoading] = useLoading();
   const [error] = useError();
 
-  const onSignInSubmit = async (signInInfo: AuthSignInDto) => {
-    const signInResponse = await dispatch(signIn(signInInfo));
-    if (signInResponse) {
-      navigate('/home');
+  const onSignUpSubmit = async (user: AuthSignUpDto) => {
+    const signUpResponse = await dispatch(AuthService.createNewUser(user));
+    if (signUpResponse) {
+      navigate('/account-verification');
     }
   };
 
-  const { handleSubmit, handleChange, handleBlur, touched, errors } = useFormik({
+  const { handleSubmit, values, handleChange, handleBlur, touched, errors } = useFormik({
     initialValues: {
+      name: '',
+      surname: '',
       email: '',
       password: '',
     },
     validationSchema,
-    onSubmit: onSignInSubmit,
+    onSubmit: onSignUpSubmit,
   });
 
   return (
     <form onSubmit={handleSubmit}>
       <Grid container spacing={2}>
+        <Grid item xs={6}>
+          <TextField
+            id="name"
+            label="First name"
+            fullWidth
+            variant="filled"
+            value={values.name}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.name && !!errors.name}
+            helperText={touched.name ? errors.name : undefined}
+            icon={<AccountBoxIcon color="secondary" />}
+          />
+        </Grid>
+        <Grid item xs={6}>
+          <TextField
+            id="surname"
+            label="Last name"
+            fullWidth
+            variant="filled"
+            value={values.surname}
+            onChange={handleChange}
+            onBlur={handleBlur}
+            error={touched.surname && !!errors.surname}
+            helperText={touched.surname ? errors.surname : undefined}
+            icon={<AccountBoxIcon color="secondary" />}
+          />
+        </Grid>
         <Grid item xs={12}>
           <TextField
             id="email"
@@ -69,9 +96,9 @@ const SignInForm: FC<{}> = () => {
           </Typography>
         </Grid>
       </Grid>
-      <AuthActionButtons type="signIn" to="/sign-up" isLoading={isLoading} />
+      <AuthActionButtons type="signUp" to="/sign-in" isLoading={isLoading} />
     </form>
   );
 };
 
-export default SignInForm;
+export default SignUpForm;

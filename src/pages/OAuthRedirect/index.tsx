@@ -1,21 +1,24 @@
 import { useEffect } from 'react';
 import { useNavigate, useSearchParams } from 'react-router-dom';
 
-import { AppLocalStorageAPI } from '../../shared/public-api';
+import { authActions } from '../../entities/public-api';
+import { AppLocalStorageAPI, useAppDispatch } from '../../shared/public-api';
 
 const OAuthRedirect = () => {
   const navigate = useNavigate();
   const [params] = useSearchParams();
+  const dispatch = useAppDispatch();
 
   useEffect(() => {
     const accessToken = params.get('access_token');
     if (accessToken) {
+      dispatch(authActions.setIsAuth(true));
       AppLocalStorageAPI.updateAccessToken(accessToken);
-      navigate('/home');
+      navigate('/dashboard');
     } else {
       navigate('/sign-up?error=true');
     }
-  }, [params, navigate]);
+  }, [params, navigate, dispatch]);
 
   return null;
 };

@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { AuthCard } from '../../entities/public-api';
-import { SignInForm } from '../../feature/public-api';
+import { SignInForm } from '../../features/public-api';
 
 interface SignInPageProps {}
 

@@ -1,6 +1,6 @@
-import { appActions } from '../../public-api';
+import { appActions } from '../../model';
 
-export const serverRequestMiddleware = (store) => (next) => (action) => {
+const serverRequestMiddleware = (store) => (next) => (action) => {
   if (action.type.endsWith('/pending')) {
     // The action type ends with '/pending' if it's a server request
     store.dispatch(appActions.fetchDataStart());
@@ -13,3 +13,5 @@ export const serverRequestMiddleware = (store) => (next) => (action) => {
   }
   return next(action);
 };
+
+export default serverRequestMiddleware;

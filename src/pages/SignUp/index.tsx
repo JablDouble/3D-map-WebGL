@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 
 import { AuthCard } from '../../entities/public-api';
-import { SignUpForm } from '../../feature/public-api';
+import { SignUpForm } from '../../features/public-api';
 
 interface SignUpPageProps {}
 

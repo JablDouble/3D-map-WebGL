@@ -11,4 +11,13 @@ export class AuthOperation {
     const response = await AuthAPI.signIn(signInData);
     return response.data;
   });
+
+  static getInitData = createSafeAsyncThunk('auth/getInitUser', async () => {
+    const response = await AuthAPI.getInitData();
+    return response.data;
+  });
+
+  static signOut = createSafeAsyncThunk('auth/signOut', async () => {
+    return AuthAPI.signOut();
+  });
 }

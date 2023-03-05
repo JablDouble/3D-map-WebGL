@@ -1,3 +1,3 @@
 export { default as AuthCard } from './AuthCard';
 export { default as PasswordTextField } from './PasswordTextField';
-export * from './AuthActionButtons';
+export { default as PrivateRoute } from './PrivateRoute';

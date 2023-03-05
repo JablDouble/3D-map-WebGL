@@ -1,7 +1,7 @@
 import React, { FunctionComponent } from 'react';
 import { Provider } from 'react-redux';
 
-import { store } from '../../shared/config/store';
+import { store } from '../store';
 
 const withStore = (WrappedComponent: FunctionComponent) => (props) =>
   (

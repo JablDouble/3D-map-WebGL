@@ -1,6 +1,7 @@
 import * as Sentry from '@sentry/react';
 import compose from 'compose-function';
 
+import { withAuth } from '../../entities/public-api';
 import withGlobalErrorBoundary from './withErrorBoundary';
 import withRouter from './withRouter';
 import withStore from './withStore';
@@ -12,4 +13,5 @@ export const withProviders = compose(
   withGlobalErrorBoundary,
   withRouter,
   withTheme,
+  withAuth,
 );
