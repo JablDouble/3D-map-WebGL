@@ -1,5 +1,3 @@
-import { RootState } from '../public-api';
-
 const getAppSelector = (state: RootState) => state.app;
 
 export const getIsLoading = (state: RootState) => getAppSelector(state).isLoading;

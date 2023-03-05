@@ -1,7 +1,7 @@
 import GoogleIcon from '@mui/icons-material/Google';
 import React from 'react';
 
-import { Button, googleOAuthURL } from '../../../shared/public-api';
+import { Button, googleOAuthURL } from '../../shared/public-api';
 
 interface GoogleAuthButtonProps {
   type: 'signIn' | 'signUp';

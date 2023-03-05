@@ -1,12 +1,15 @@
 import AppLocalStorageAPI from './api/appLocalStorage';
 import AuthAPI from './api/auth';
+import $api from './config/axiosInstance';
 import googleOAuthURL from './config/googleOAuth';
 import GlobalErrorBoundary from './lib/errorBoundaries/GlobalErrorBoundary';
 import convertHexToRGBA from './lib/helpers/convertHexToRGBA';
 import createSafeAsyncThunk from './lib/helpers/createSafeAsyncThunk';
 import useAppDispatch from './lib/hooks/useAppDispatch';
+import useAppSelector from './lib/hooks/useAppSelector';
 import useError from './lib/hooks/useError';
 import useLoading from './lib/hooks/useLoading';
+import serverRequestMiddleware from './lib/middlewares/serverRequestMiddleware';
 import { PaletteColor } from './types/mui';
 import Button from './ui/Button';
 import CustomLink from './ui/CustomLink';
@@ -18,14 +21,17 @@ import TextField from './ui/TextField';
 
 export * from './model';
 
-export * from './config/store';
-
+// ui
 export { Button, TextField, Logo, Image, NavLink, CustomLink, PaletteColor, GradientImageBox };
 
-export { createSafeAsyncThunk, GlobalErrorBoundary, convertHexToRGBA };
+// lib
+export { createSafeAsyncThunk, GlobalErrorBoundary, convertHexToRGBA, serverRequestMiddleware };
 
+// api
 export { AuthAPI, AppLocalStorageAPI };
 
-export { useAppDispatch, useLoading, useError };
+// lib/hooks
+export { useAppDispatch, useLoading, useError, useAppSelector };
 
-export { googleOAuthURL };
+// config
+export { googleOAuthURL, $api };

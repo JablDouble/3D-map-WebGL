@@ -9,7 +9,8 @@
     "lint": "eslint ./src --ext .tsx,.ts",
     "lint:fix": "eslint ./src --ext .tsx,.ts --fix",
     "prepare": "husky install",
-    "test": "echo test"
+    "test": "echo test",
+    "detect-circle-dependencies": "npx dpdm --no-warning --no-tree ./src/index.tsx"
   },
   "keywords": [],
   "author": "Aleh Yablonski",
@@ -32,6 +33,7 @@
     "react-dom": "^18.2.0",
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",
+    "react-router-redux": "^4.0.8",
     "yup": "^1.0.0"
   },
   "devDependencies": {
@@ -43,6 +45,7 @@
     "@trivago/prettier-plugin-sort-imports": "^4.0.0",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
+    "@types/react-router-redux": "^5.0.21",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "babel-loader": "^9.1.2",

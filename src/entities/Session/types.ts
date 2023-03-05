@@ -1,4 +1,10 @@
-import { User } from '../public-api';
+export interface User {
+  name: string;
+  surname: string;
+  email: string;
+  isActivated: boolean;
+  activationLink: string;
+}
 
 export interface AuthResponse {
   accessToken: string;

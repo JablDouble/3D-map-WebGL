@@ -2,7 +2,7 @@ import { Grid } from '@mui/material';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import { Button } from '../../../shared/public-api';
+import { Button } from '../../shared/public-api';
 import { GoogleAuthButton } from './GoogleAuthButton';
 
 interface AuthActionsProps {
@@ -11,7 +11,7 @@ interface AuthActionsProps {
   type: 'signIn' | 'signUp';
 }
 
-export const AuthActionButtons = ({ to, isLoading, type }: AuthActionsProps) => (
+const AuthActionButtons = ({ to, isLoading, type }: AuthActionsProps) => (
   <Grid container item spacing={2}>
     <Grid item xs={6}>
       <Link to={to}>
@@ -30,3 +30,5 @@ export const AuthActionButtons = ({ to, isLoading, type }: AuthActionsProps) => 
     </Grid>
   </Grid>
 );
+
+export default AuthActionButtons;

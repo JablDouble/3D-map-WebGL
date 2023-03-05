@@ -1,6 +1,7 @@
 import React, { lazy } from 'react';
 import { Route, Routes } from 'react-router-dom';
 
+import { PrivateRoute } from '../entities/public-api';
 import OAuthRedirect from './OAuthRedirect';
 
 const SignUp = lazy(() => import('./SignUp'));
@@ -14,6 +15,10 @@ const Routing = () => {
       <Route path="/sign-in" element={<SignIn />} />
       <Route path="/account-verification" element={<AccountVerification />} />
       <Route path="/oauth" element={<OAuthRedirect />} />
+      <Route element={<PrivateRoute />}>
+        {/* routes for auth users */}
+        <Route path="/dashboard" element={<div>1231</div>} />
+      </Route>
       <Route path="*" element={<div>not found page!</div>} />
     </Routes>
   );

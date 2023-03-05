@@ -1,7 +1,7 @@
 import { CircularProgress, Button as MUIButton, styled } from '@mui/material';
 import React, { FC, ReactElement, ReactNode } from 'react';
 
-import { PaletteColor } from '../../public-api';
+import { PaletteColor } from '../../types/mui';
 
 interface ButtonProps {
   children: ReactNode;

@@ -11,7 +11,14 @@
     "eslint:recommended",
     "plugin:react/recommended"
   ],
-  "overrides": [],
+  "overrides": [
+    {
+      "files": ["*.ts"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
@@ -37,6 +44,7 @@
     "import/no-extraneous-dependencies": "off",
     "react/jsx-props-no-spreading": "off",
     "react/display-name": "off",
+    "boundaries/element-types": "off",
     "import/no-internal-modules": [
       "error",
       {
@@ -91,5 +99,17 @@
         "extensions": [".js", ".jsx", ".ts", ".tsx", ".d.ts"]
       }
     }
+  },
+  "globals": {
+    "React": true,
+    "google": true,
+    "mount": true,
+    "mountWithRouter": true,
+    "shallow": true,
+    "shallowWithRouter": true,
+    "context": true,
+    "expect": true,
+    "jsdom": true,
+    "JSX": true
   }
 }

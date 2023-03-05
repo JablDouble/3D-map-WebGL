@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-import { AppLocalStorageAPI } from '../public-api';
+import AppLocalStorageAPI from '../api/appLocalStorage';
 
 export const { API_URL } = process.env;
 
@@ -30,9 +30,10 @@ $api.interceptors.response.use(
         });
         AppLocalStorageAPI.updateAccessToken(response.data.accessToken);
         return $api.request(originalRequest);
-      } catch (e) {
-        // eslint-disable-next-line no-alert
-        alert('not authorized');
+      } catch {
+        /* empty */
+        AppLocalStorageAPI.deleteAccessToken();
+        window.location.href = '/sign-in';
       }
     }
     throw error;
