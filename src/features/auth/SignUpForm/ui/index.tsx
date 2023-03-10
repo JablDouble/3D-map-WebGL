@@ -35,7 +35,7 @@ const SignUpForm: FC<{}> = () => {
   });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid="sign-up-form">
       <Grid container spacing={2}>
         <Grid item xs={6}>
           <TextField
@@ -91,9 +91,11 @@ const SignUpForm: FC<{}> = () => {
           />
         </Grid>
         <Grid item mb={1}>
-          <Typography color="error" variant="subtitle2">
-            {error}
-          </Typography>
+          {error && (
+            <Typography color="error" data-testid="sign-up-form-error" variant="subtitle2">
+              {error}
+            </Typography>
+          )}
         </Grid>
       </Grid>
       <AuthActionButtons type="signUp" to="/sign-in" isLoading={isLoading} />

@@ -7,7 +7,7 @@ import withRouter from './withRouter';
 import withStore from './withStore';
 import withTheme from './withTheme';
 
-export const withProviders = compose(
+const withProviders = compose(
   Sentry.withProfiler,
   withStore,
   withGlobalErrorBoundary,
@@ -15,3 +15,8 @@ export const withProviders = compose(
   withTheme,
   withAuth,
 );
+
+export {
+  withStore, // only for tests
+  withProviders,
+};

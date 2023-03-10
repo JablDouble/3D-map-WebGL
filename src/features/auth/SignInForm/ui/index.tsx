@@ -60,9 +60,11 @@ const SignInForm: FC<{}> = () => {
           />
         </Grid>
         <Grid item mb={1}>
-          <Typography color="error" variant="subtitle2">
-            {error}
-          </Typography>
+          {error && (
+            <Typography color="error" variant="subtitle2">
+              {error}
+            </Typography>
+          )}
         </Grid>
       </Grid>
       <AuthActionButtons type="signIn" to="/sign-up" isLoading={isLoading} />

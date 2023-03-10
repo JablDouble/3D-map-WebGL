@@ -22,22 +22,23 @@ export const authSlice = createSlice({
       state.user = null;
     },
   },
-  extraReducers: {
-    [signUp.fulfilled.type]: (state, action) => {
-      state.isAuth = false;
-      state.user = action.payload.user;
-    },
-    [signIn.fulfilled.type]: (state) => {
-      state.isAuth = true;
-      state.user = null;
-    },
-    [getInitData.fulfilled.type]: (state, action) => {
-      state.isAuth = true;
-      state.user = action.payload;
-    },
-    [signOut.fulfilled.type]: (state) => {
-      state.isAuth = false;
-      state.user = null;
-    },
+  extraReducers: (builder) => {
+    builder
+      .addCase(signUp.fulfilled, (state, action) => {
+        state.isAuth = false;
+        state.user = action.payload.user;
+      })
+      .addCase(signIn.fulfilled, (state) => {
+        state.isAuth = true;
+        state.user = null;
+      })
+      .addCase(getInitData.fulfilled, (state, action) => {
+        state.isAuth = true;
+        state.user = action.payload;
+      })
+      .addCase(signOut.fulfilled, (state) => {
+        state.isAuth = false;
+        state.user = null;
+      });
   },
 });
