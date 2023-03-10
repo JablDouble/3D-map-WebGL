@@ -8,7 +8,8 @@ const createSafeAsyncThunk = <Returned, ThunkArg = void>(
     try {
       return await thunk(payload, thunkAPI);
     } catch (error) {
-      const errorMessage = error?.response?.data?.message || 'Something went wrong';
+      const errorMessage =
+        error?.response?.data?.message || error.message || 'Something went wrong';
       return thunkAPI.rejectWithValue(errorMessage);
     }
   });

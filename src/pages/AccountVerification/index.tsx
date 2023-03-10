@@ -11,7 +11,7 @@ const AccountVerification: FC<AccountVerificationProps> = () => {
 
   return (
     <AuthCard subtitle="It's almost done" title="Verify your account">
-      <Typography variant="h5" color="secondary" mt={2}>
+      <Typography variant="h5" color="secondary" mt={2} data-testid="account-verification-text">
         We are glad to see you on our service. An account confirmation message has been sent to your{' '}
         {userEmail ? (
           <>

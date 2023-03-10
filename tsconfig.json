@@ -5,7 +5,7 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "baseUrl": "src"
+    "baseUrl": "./src"
   },
-  "include": ["src"]
+  "include": ["src", "jest.config.js", "mocks"]
 }
