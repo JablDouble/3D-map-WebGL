@@ -7,5 +7,5 @@
     "jsx": "react-jsx",
     "baseUrl": "./src"
   },
-  "include": ["src", "jest.config.js", "mocks"]
+  "include": ["./src/**/*.ts", "jest.config.ts"]
 }
