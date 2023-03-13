@@ -10,7 +10,8 @@
     "@feature-sliced",
     "eslint:recommended",
     "plugin:react/recommended",
-    "plugin:jest/recommended"
+    "plugin:jest/recommended",
+    "plugin:cypress/recommended"
   ],
   "overrides": [
     {

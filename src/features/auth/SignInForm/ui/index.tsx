@@ -32,7 +32,7 @@ const SignInForm: FC<{}> = () => {
   });
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} data-testid="sign-in-form">
       <Grid container spacing={2}>
         <Grid item xs={12}>
           <TextField
