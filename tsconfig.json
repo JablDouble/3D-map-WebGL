@@ -5,7 +5,10 @@
     "strictNullChecks": true,
     "esModuleInterop": true,
     "jsx": "react-jsx",
-    "baseUrl": "./src"
+    "baseUrl": "./src",
+    "paths": {
+      "node_modules": ["node_modules"]
+    }
   },
   "include": ["./src/**/*.ts", "jest.config.ts"]
 }

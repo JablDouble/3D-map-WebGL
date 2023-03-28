@@ -3,8 +3,8 @@ import React, { FC } from 'react';
 
 interface ImageProps {
   src: string;
-  height: number | string;
-  width: number | string;
+  height?: number | string;
+  width?: number | string;
   alt: string;
   [x: string]: any;
 }

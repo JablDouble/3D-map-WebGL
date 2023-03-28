@@ -24,7 +24,7 @@ interface CustomButtonProps {
 
 const CustomButton = styled(MUIButton)(({ theme, color }: CustomButtonProps) => ({
   borderRadius: '25px',
-  padding: 15,
+  padding: '15px 20px',
   boxShadow: color !== 'secondary' ? `0 12px 35px -22px ${theme.palette[color].main}` : undefined,
 }));
 

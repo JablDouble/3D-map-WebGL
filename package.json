@@ -38,6 +38,9 @@
     "react-redux": "^8.0.5",
     "react-router-dom": "^6.8.0",
     "react-router-redux": "^4.0.8",
+    "react-spotify-web-playback": "^0.13.2",
+    "react-spotify-web-playback-sdk": "^3.0.1",
+    "spotify-web-api-node": "^5.0.2",
     "yup": "^1.0.0"
   },
   "devDependencies": {
@@ -61,6 +64,7 @@
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
     "@types/react-router-redux": "^5.0.21",
+    "@types/spotify-web-api-node": "^5.0.7",
     "@typescript-eslint/eslint-plugin": "^5.49.0",
     "@typescript-eslint/parser": "^5.49.0",
     "babel-jest": "^29.5.0",

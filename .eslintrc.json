@@ -67,7 +67,8 @@
     ],
     "react/jsx-wrap-multilines": "off",
     "react/jsx-one-expression-per-line": "off",
-    "consistent-return": ["error", { "treatUndefinedAsUnspecified": true }],
+    "consistent-return": "off",
+    "no-undef": "off",
     "no-param-reassign": [
       "error",
       {
