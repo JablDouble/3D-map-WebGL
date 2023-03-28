@@ -1,3 +1,4 @@
 import Header from './header';
+import Spotify from './spotify';
 
-export { Header };
+export { Header, Spotify };

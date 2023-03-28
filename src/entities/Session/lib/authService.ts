@@ -23,7 +23,7 @@ export default class AuthService {
   };
 
   static signOut = () => (dispatch: AppDispatch) => {
-    AppLocalStorageAPI.deleteAccessToken();
+    AppLocalStorageAPI.clearAll();
     dispatch(AuthOperation.signOut()).unwrap();
     dispatch(push('/sign-in'));
   };

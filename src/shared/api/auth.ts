@@ -22,8 +22,4 @@ export default class AuthAPI {
   static getInitData(): Promise<AxiosResponse> {
     return $api.get('/self');
   }
-
-  static logout() {
-    return $api.post('/logout');
-  }
 }

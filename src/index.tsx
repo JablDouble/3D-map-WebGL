@@ -23,6 +23,7 @@ process.env.NODE_ENV === 'production' &&
 const rootElement = document.getElementById('root') as HTMLElement;
 
 const root = ReactDOM.createRoot(rootElement);
+
 root.render(
   <React.StrictMode>
     <App />
